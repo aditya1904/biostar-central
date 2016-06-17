@@ -433,7 +433,10 @@ class PostDetails(DetailView):
             post.can_accept = can_accept or post.has_accepted
 
         # Add attributes by mutating the objects
-        map(decorate, thread + [obj])
+        decorate(obj)
+        for post in thread:
+            decorate(post)
+        
 
         # Additional attributes used during rendering
         obj.tree = tree
