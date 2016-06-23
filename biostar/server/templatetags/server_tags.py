@@ -178,11 +178,15 @@ def sidebar_posts(posts):
 def sidebar_votes(votes):
     return dict(votes=votes)
 
-
 @register.inclusion_tag('server_tags/sidebar_users.html')
 def sidebar_users(users):
     return dict(users=users)
-
+    
+@register.inclusion_tag('server_tags/sidebar_top10.html')
+def sidebar_top10(users):
+    top_users = sorted(users, key=lambda user: user.scaled_score, reverse=True)
+    top_users = top_users[:10]
+    return dict(users=top_users)
 
 @register.inclusion_tag('server_tags/sidebar_locations.html')
 def sidebar_locations(users):
