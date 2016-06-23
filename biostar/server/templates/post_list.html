@@ -31,13 +31,14 @@
 
             {% include "banners/sidebar-postlist.html" %}
 
-            {% sidebar_votes RECENT_VOTES %}
+            {#% sidebar_votes RECENT_VOTES %#}
 
-            {% sidebar_locations RECENT_USERS %}
+            {#% sidebar_locations RECENT_USERS %#}
 
             {% sidebar_awards RECENT_AWARDS %}
 
-            {% sidebar_posts RECENT_REPLIES %}
+            {% sidebar_top10 RECENT_USERS %}
+            {#% sidebar_posts RECENT_REPLIES %#}
 
         </div>
     </div>
